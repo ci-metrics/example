@@ -1,8 +1,8 @@
-# cimetrics-hello-world
+# CI Metrics example
 
-This is a volatile experiment, you shouldn't use this, instead use https://github.com/bencherdev/bencher.
+A repo presenting an example project using CI Metrics.
 
-A repo presenting an example system for tracking generic metrics in CI like [codecov](https://about.codecov.io).
+CI Metrics is a system to track metrics like how [codecov](https://about.codecov.io) track code coverage.
 
 ![Example PR comment](./pr_comment_example.webp)
 
@@ -16,11 +16,9 @@ This is from http://3.10.39.149:3000/display/6546b543a35b7d5af8c93a7b/2069255256
 
 1. Create account
    Run `curl -X POST http://3.10.39.149:3000/users`
-   Noted down the `public_key` and `private_key`.
+   Note down the `public_key` and `private_key`.
    There is no recovery mechanism, don't loose these.
 2. Copy [pull_request.yml](./.github/workflows/pull_request.yml) and [push.yml](./.github/workflows/push.yml) to your repo.
-   Updating `PUBLIC_KEY` to be your public key.
-3. Add a repository secret named `METRICSPRIVATEKEY` with value of your private key.
 
 ## Visualize metrics
 

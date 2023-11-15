@@ -16,13 +16,15 @@ jobs:
       run: cargo test
 
     - name: CI Metrics
+      # To be more stable you can use a tag e.g.
+      # https://raw.githubusercontent.com/ci-metrics/script/v0.1.0/run.py
       run: |
-        wget https://raw.githubusercontent.com/JonathanWoollett-Light/cimetrics-script/v0.1.0/run.py
+        wget https://raw.githubusercontent.com/ci-metrics/script/master/run.py
         python3 ./run.py
       env:
         # Variables to interact with CI Metrics.
         PUBLIC_KEY: "6546b543a35b7d5af8c93a7b"
-        PRIVATE_KEY: ${{ secrets.MetricsPrivateKey }}
+        PRIVATE_KEY: "206925525691777734527727329171694843736"
         # Variables to upload
         HEAD: ${{ github.event.after }}
         DATA_FILE: "./metrics"
