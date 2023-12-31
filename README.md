@@ -1,6 +1,6 @@
 # cimetrics-hello-world
 
-This is a volatile experiment, you shouldn't use this, instead use https://github.com/bencherdev/bencher.
+**This is a volatile experiment, you shouldn't use this, instead use https://github.com/bencherdev/bencher.**
 
 A repo presenting an example system for tracking generic metrics in CI like [codecov](https://about.codecov.io).
 
@@ -64,3 +64,11 @@ curl -X GET https://cimetrics.io/metrics/sets -d "{ \
     \"private_key\": <your private key> \
 }"
 ```
+
+## Billing
+
+**Billing is disabled. It will only be enabled on stable release**
+
+You add credits to your account with `https://cimetrics.io/payment/<public key>/<private key>/<amount in USD cents>`.
+
+Billing will be based on a cost per each type of API request and overall storage used.
