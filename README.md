@@ -10,12 +10,12 @@ This is from https://github.com/JonathanWoollett-Light/cimetrics-hello-world/pul
 
 ![Example display](./display_example.webp)
 
-This is from http://3.10.39.149:3000/display/6546b543a35b7d5af8c93a7b/206925525691777734527727329171694843736.
+This is from https://cimetrics.io/display/6546b543a35b7d5af8c93a7b/206925525691777734527727329171694843736.
 
 ## Setup
 
 1. Create account
-   Run `curl -X POST http://3.10.39.149:3000/users`
+   Run `curl -X POST https:/cimetrics.io/users`
    Noted down the `public_key` and `private_key`.
    There is no recovery mechanism, don't loose these.
 2. Copy [pull_request.yml](./.github/workflows/pull_request.yml) and [push.yml](./.github/workflows/push.yml) to your repo.
@@ -27,7 +27,7 @@ This is from http://3.10.39.149:3000/display/6546b543a35b7d5af8c93a7b/2069255256
 Visit
 
 ```
-http://3.10.39.149:3000/display/<your public key>/<your private key>
+https://cimetrics.io/display/<your public key>/<your private key>
 ```
 
 ## Display metrics on the same chart
@@ -37,7 +37,7 @@ You can display metrics on the same chart.
 Set metrics to display on the same chart with:
 
 ```bash
-curl -X POST http://3.10.39.149:3000/metrics/sets -d "{ \
+curl -X POST https://cimetrics.io/metrics/sets -d "{ \
     \"user\": { \
         \"public_key\": \"<your public key>\", \
         \"private_key\": <your private key> \
@@ -59,7 +59,7 @@ This sets:
 Get metrics you display on the same chart with:
 
 ```bash
-curl -X GET http://3.10.39.149:3000/metrics/sets -d "{ \
+curl -X GET https://cimetrics.io/metrics/sets -d "{ \
     \"public_key\": \"<your public key>\", \
     \"private_key\": <your private key> \
 }"
