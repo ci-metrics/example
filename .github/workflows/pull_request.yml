@@ -15,12 +15,12 @@ jobs:
 
     - name: CI Metrics
       run: |
-        wget https://raw.githubusercontent.com/JonathanWoollett-Light/cimetrics-script/v0.1.0/run.py
+        wget https://raw.githubusercontent.com/ci-metrics/script/master/run.py
         python3 ./run.py
       env:
         # Variables to interact with CI Metrics.
         PUBLIC_KEY: "6546b543a35b7d5af8c93a7b"
-        PRIVATE_KEY: ${{ secrets.METRICS_PRIVATE_KEY }}
+        PRIVATE_KEY: "206925525691777734527727329171694843736"
         # Variables to upload
         HEAD: ${{ github.event.pull_request.head.sha }}
         DATA_FILE: "./metrics"
