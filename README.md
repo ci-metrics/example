@@ -6,7 +6,7 @@ A repo presenting an example system for tracking generic metrics in CI like [cod
 
 ![Example PR comment](./pr_comment_example.webp)
 
-This is from https://github.com/JonathanWoollett-Light/cimetrics-hello-world/pull/6#issuecomment-1806123695.
+This is from https://github.com/JonathanWoollett-Light/example/pull/1.
 
 ![Example display](./display_example.webp)
 
@@ -15,7 +15,7 @@ This is from https://cimetrics.io/display/6546b543a35b7d5af8c93a7b/2069255256917
 ## Setup
 
 1. Create account
-   Run `curl -X POST https:/cimetrics.io/users`
+   Run `curl -X POST https://cimetrics.io/users`
    Noted down the `public_key` and `private_key`.
    There is no recovery mechanism, don't loose these.
 2. Copy [pull_request.yml](./.github/workflows/pull_request.yml) and [push.yml](./.github/workflows/push.yml) to your repo.
@@ -67,8 +67,9 @@ curl -X GET https://cimetrics.io/metrics/sets -d "{ \
 
 ## Billing
 
-**Billing is disabled. It will only be enabled on stable release**
+**Billing is currently free. It will only be charged on stable release**
 
-You add credits to your account with `https://cimetrics.io/payment/<public key>/<private key>/<amount in USD cents>`.
+You add credits to your account with
+`https://cimetrics.io/payment/<your public key>/<your private key>/<amount in USD cents>`.
 
 Billing will be based on a cost per each type of API request and overall storage used.
