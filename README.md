@@ -20,7 +20,6 @@ This is from https://cimetrics.io/display/6546b543a35b7d5af8c93a7b/2069255256917
    There is no recovery mechanism, don't loose these.
 2. Copy [pull_request.yml](./.github/workflows/pull_request.yml) and [push.yml](./.github/workflows/push.yml) to your repo.
    Updating `PUBLIC_KEY` to be your public key.
-3. Add a repository secret named `METRICSPRIVATEKEY` with value of your private key.
 
 ## Visualize metrics
 
