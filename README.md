@@ -14,10 +14,8 @@ This is from https://cimetrics.io/display/6546b543a35b7d5af8c93a7b/2069255256917
 
 ## Setup
 
-1. Create account
-   Run `curl -X POST https://cimetrics.io/users`
-   Noted down the `public_key` and `private_key`.
-   There is no recovery mechanism, don't loose these.
+1. Create account by running `curl -X POST https://cimetrics.io/users`.
+   Note down the `public_key` and `private_key`.
 2. Copy [pull_request.yml](./.github/workflows/pull_request.yml) and [push.yml](./.github/workflows/push.yml) to your repo.
 3. Update `PUBLIC_KEY` and use repository secrets for `PRIVATE_KEY`.
 
