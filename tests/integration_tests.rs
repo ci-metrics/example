@@ -1,3 +1,5 @@
+use rand::distributions::{Alphanumeric, Distribution, Standard, Uniform};
+use rand::thread_rng;
 use rand::Rng;
 use std::collections::HashMap;
 use std::sync::Mutex;
@@ -100,4 +102,16 @@ fn many() {
     handle.add("random_many_five", rng.gen::<u16>() as u64);
     handle.add("random_many_six", rng.gen::<u16>() as u64);
     handle.add("random_many_seven", rng.gen::<u16>() as u64);
+}
+
+#[test]
+fn standard_distribution() {
+    let handle = METRICS.handle();
+    let mut rng = thread_rng();
+    let mut iter = Standard
+        .sample_iter(&mut rng)
+        .map(|x: f32| (1_000_000f32 * x) as u64);
+    handle.add("standard_one", iter.next().unwrap());
+    handle.add("standard_two", iter.next().unwrap());
+    handle.add("standard_three", iter.next().unwrap());
 }
