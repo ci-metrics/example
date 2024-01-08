@@ -1,6 +1,6 @@
 fn main() {
     println!("Hello, world!");
     println!("I'm going for a walk");
-    println!("aaaaaaaaaaaaaaaaaaaaaaa");
+    println!("aaaaaaaaaaaaaaaaaaaaaaaa");
     println!("Goodbye, world!");
 }
