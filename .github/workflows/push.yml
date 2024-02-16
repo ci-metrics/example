@@ -22,7 +22,7 @@ jobs:
       env:
         # Variables to interact with CI Metrics.
         PUBLIC_KEY: "6546b543a35b7d5af8c93a7b"
-        PRIVATE_KEY: "206925525691777734527727329171694843736"
+        PRIVATE_KEY: "9bac68182b35f8df71b2543c38427758"
         # Variables to upload
         HEAD: ${{ github.event.after }}
         DATA_FILE: "./metrics"
