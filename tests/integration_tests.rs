@@ -1,4 +1,4 @@
-use rand::distributions::{Alphanumeric, Distribution, Standard, Uniform};
+use rand::distributions::{Distribution, Standard};
 use rand::thread_rng;
 use rand::Rng;
 use std::collections::HashMap;
