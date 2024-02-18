@@ -8,9 +8,7 @@ A repo presenting an example system for tracking generic metrics in CI like [cod
 
 This is from https://github.com/JonathanWoollett-Light/example/pull/1.
 
-![Example display one](./example_display_1.webp)
-
-![Example display two](./example_display_2.webp)
+![Example display one](./example_display.webp)
 
 This is from https://cimetrics.io/.
 
