@@ -1,14 +1,19 @@
 use rand::distributions::{Distribution, Standard};
 use rand::thread_rng;
 use rand::Rng;
-use std::collections::HashMap;
+use std::collections::BTreeMap;
+use std::io::Write;
 use std::sync::Mutex;
 use std::sync::OnceLock;
 
 static METRICS: Metrics = Metrics::new();
 
 struct Metrics(OnceLock<MetricsInner>);
-struct MetricsInner(Mutex<(u64, HashMap<&'static str, u64>)>);
+
+/// Use a `BTreeMap` over a `HashMap` so metrics are output in a consistent order and give a useful
+/// diff when commited.
+struct MetricsInner(Mutex<(u64, BTreeMap<&'static str, u64>)>);
+
 struct MetricsHandle<'a>(&'a MetricsInner);
 
 impl Metrics {
@@ -18,7 +23,7 @@ impl Metrics {
     fn handle(&self) -> MetricsHandle<'_> {
         let metrics = self
             .0
-            .get_or_init(|| MetricsInner(Mutex::new((0, HashMap::new()))));
+            .get_or_init(|| MetricsInner(Mutex::new((0, BTreeMap::new()))));
         let mut guard = metrics.0.lock().unwrap();
         let (count, _map) = &mut *guard;
         *count += 1;
@@ -35,17 +40,23 @@ impl MetricsHandle<'_> {
 }
 impl Drop for MetricsHandle<'_> {
     fn drop(&mut self) {
+        use std::fmt::Write;
+
         let mut guard = self.0 .0.lock().unwrap();
         let (count, map) = &mut *guard;
         *count -= 1;
         if *count == 0 {
-            let file = std::fs::OpenOptions::new()
+            let mut file = std::fs::OpenOptions::new()
                 .create(true)
                 .truncate(true)
                 .write(true)
-                .open("metrics")
+                .open("metrics.csv")
                 .unwrap();
-            serde_json::to_writer_pretty(file, map).unwrap();
+            let csv = map.iter_mut().fold(String::new(), |mut acc, (k, v)| {
+                writeln!(acc, "{k},{v}").unwrap();
+                acc
+            });
+            file.write_all(csv.as_bytes()).unwrap();
         }
     }
 }

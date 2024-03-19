@@ -10,6 +10,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Format
+      run: cargo fmt --check
+
+    - name: Lint
+      run: cargo clippy --tests -- --deny warnings
+
     - name: Test
       run: cargo test
 
@@ -23,7 +29,7 @@ jobs:
         PRIVATE_KEY: "9bac68182b35f8df71b2543c38427758"
         # Variables to upload
         HEAD: ${{ github.event.pull_request.head.sha }}
-        DATA_FILE: "./metrics"
+        DATA_FILE: "./metrics.csv"
         # Variables to diff
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BASE: ${{ github.event.pull_request.base.sha }}
