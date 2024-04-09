@@ -34,3 +34,4 @@ jobs:
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BASE: ${{ github.event.pull_request.base.sha }}
         ISSUE: ${{ github.event.pull_request.number }}
+        BRANCH: ${{ github.event.pull_request.head.ref }}
