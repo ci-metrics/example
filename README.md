@@ -6,7 +6,7 @@ A repo presenting an example system for tracking generic metrics in CI like [cod
 
 ![Example PR comment](./example_pr.webp)
 
-This is from https://github.com/JonathanWoollett-Light/example/pull/1.
+This is from https://github.com/JonathanWoollett-Light/example/pull/2.
 
 ![Example display one](./example_display.webp)
 
