@@ -4,11 +4,13 @@
 
 A repo presenting an example system for tracking generic metrics in CI like [codecov](https://about.codecov.io).
 
-![Example PR comment](./example_pr.webp)
+![Example PR comment](./example_pr_light.webp#gh-light-mode-only)
+![Example PR comment](./example_pr_dark.webp#gh-dark-mode-only)
 
 This is from https://github.com/JonathanWoollett-Light/example/pull/2.
 
-![Example display one](./example_display.webp)
+![Example display one](./example_display_light.webp#gh-light-mode-only)
+![Example display one](./example_display_dark.webp#gh-dark-mode-only)
 
 This is from https://cimetrics.io/.
 
