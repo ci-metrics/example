@@ -1,7 +1,5 @@
 # cimetrics-hello-world
 
-[![Discord invite link](https://dcbadge.vercel.app/api/server/eYjfCVk3BF)](https://discord.gg/eYjfCVk3BF)
-
 A repo presenting an example system for tracking generic metrics in CI like [codecov](https://about.codecov.io).
 
 ![Example PR comment](./example_pr_light.webp#gh-light-mode-only)
