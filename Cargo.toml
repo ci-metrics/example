@@ -8,5 +8,5 @@ edition = "2021"
 [dependencies]
 
 [dev-dependencies]
-serde = "1.0.195"
 rand = "0.8.5"
+cimetrics-rs = "0.1.0"
