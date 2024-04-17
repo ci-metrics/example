@@ -21,10 +21,19 @@ This is from https://cimetrics.io/.
 
 ## Repository setup
 
-1. Copy [pull_request.yml](./.github/workflows/pull_request.yml) and [push.yml](./.github/workflows/push.yml) to your repo.
-2. Update `PUBLIC_KEY` and use repository secrets for `PRIVATE_KEY`.
+1.  Copy [pull_request.yml](./.github/workflows/pull_request.yml) and [push.yml](./.github/workflows/push.yml) to your repo.
+2.  Update the `Generate metrics` step in each to run your tests.
+3.  Update `PUBLIC_KEY` and `PRIVATE_KEY` [using secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions) for `PRIVATE_KEY`.
+4.  Update your tests to output a `metrics.csv` file to the root of your repository.
+    See [SDKs](#sdks)
 
 ## Help
 
 - [Join the discord](https://discord.gg/eYjfCVk3BF)
 - [Post an issue](https://github.com/ci-metrics/example/issues)
+
+## SDKs
+
+Language | SDK
+---|---
+Rust|https://crates.io/crates/cimetrics-rs

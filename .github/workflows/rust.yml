@@ -1,0 +1,18 @@
+on:
+  push:
+  pull_request:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  rust:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Format
+      run: cargo fmt --check
+
+    - name: Lint
+      run: cargo clippy --tests -- --deny warnings
