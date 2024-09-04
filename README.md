@@ -1,5 +1,7 @@
 # cimetrics-hello-world
 
+## ⚠️The site is temporarily down while transitioning to serverless⚠️
+
 A repo presenting an example system for tracking generic metrics in CI like [codecov](https://about.codecov.io).
 
 ![Example PR comment](./example_pr_light.webp#gh-light-mode-only)
