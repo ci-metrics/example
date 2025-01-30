@@ -1,6 +1,8 @@
 # cimetrics-hello-world
 
-## ⚠️The site is temporarily down while transitioning to serverless⚠️
+## ⚠️The site is down as it was costing me money and no one was using it⚠️
+
+**I may come back and rewrite this project in the future to be more efficient**
 
 A repo presenting an example system for tracking generic metrics in CI like [codecov](https://about.codecov.io).
 
